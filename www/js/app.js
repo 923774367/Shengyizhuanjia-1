@@ -49,6 +49,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('welcome', {
+      url: '/welcome',
+      templateUrl: 'views/welcome/welcome.html',
+    })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {
