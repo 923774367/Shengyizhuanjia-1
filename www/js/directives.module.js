@@ -3,5 +3,5 @@
  */
 angular.module('starter.directives', ['ngResource'])
   .factory('Session', function ($resource) {
-    return $resource('http://localhost:5000/sessions/:sessionId');
+    return $resource('http://localhost:8100/sessions/:sessionId');
   });

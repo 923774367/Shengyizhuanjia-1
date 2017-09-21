@@ -4,9 +4,8 @@
 (function () {
   'use strict';
   angular.module('starter.services')
-    .factory('LocalStoeageService',function () {
+    .factory('localStorageService',[function () {
       var  service={};
-      return service;
       service.get=function (key,defaultValue) {
         var  val =localStorage.getItem(key);
         try{
@@ -35,11 +34,13 @@
         localStorage.removeItem(key);
       }
 
-      localStorageService.add('App',{
-        version:'1.0.0',
-        run:false
-      });
-    });
+      /*localStorageService.add('App',{
+       version:'1.0.0',
+       run:false
+       })*/;
+      return service;
+
+    }]);
 })();
 
 
