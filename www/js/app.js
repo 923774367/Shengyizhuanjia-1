@@ -49,6 +49,17 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
         }
       }
     })
+    .state('forgotpassword',{
+      url:'/forgotpassword',
+      templateUrl:'views/forgotpassword/forgotpassword.html'
+    })
+   
+    .state('login',{
+      url:'/login',
+      templateUrl:'views/forgotpassword/login.html',
+      controller:'LoginCtrl'
+    })
+
     .state('welcome', {
       url: '/welcome',
       templateUrl: 'views/welcome/welcome.html',
