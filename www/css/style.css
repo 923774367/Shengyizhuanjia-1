@@ -5,3 +5,9 @@
 .side-background{
   background-color: rgb(78,78,78);
 }
+.side-menu li{
+  border-left:none;
+}
+.side-menu li i{
+  font-size:medium!important;
+}
