@@ -1,1 +1,7 @@
 /* Empty. Add your own CSS if you like */
+.margin-left{
+  margin-left:10px;
+}
+.side-background{
+  background-color: rgb(78,78,78);
+}
