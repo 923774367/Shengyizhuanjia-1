@@ -7,6 +7,7 @@
 }
 .side-menu li{
   border-left:none;
+  background-color: rgb(78,78,78);
 }
 .side-menu li i{
   font-size:medium!important;
@@ -26,8 +27,15 @@
   display: table;
 }
 .quick-action-item{
-  width: 25vw;
   height: 25vw;
-  display: table-cell;
-  vertical-align: middle;
+  margin-left: -1px;
+  display: flex;
+  align-items: center;
+  margin-top: -1px;
+}
+.row:last-child .col-border{
+  border-bottom: solid 1px #ececec;
+}
+.shortcut{
+  height: auto;
 }
