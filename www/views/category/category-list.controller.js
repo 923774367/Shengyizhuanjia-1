@@ -87,5 +87,45 @@
         ]
       }
     ];
-  }])
-})
+    if($scope.categories.length>0){
+      $scope.activeCategory=$scope.categories[0];
+    }
+    $scope.selectCategory=function (index) {
+      if($scope.activeCategory.ID!=$scope.categories[index].ID){
+        $scope.activeCategory=$scope.categories[index];
+      }
+    };
+    $scope.selectSubCategory=function (data) {
+      console.log(data);
+      $scope.activeSubCategory=data;
+      $ionicHistory.goBack();
+    };
+    $scope.showActionSheet=function () {
+      $ionicActionSheet.show({
+        buttons:[
+          {
+            text:'<b>新增小分类</b>'
+          },
+          {
+            text:'编辑分类'
+          }
+        ],
+        cancelText:'取消',
+        buttonClicked:function (index) {
+          switch (index){
+            case 0:
+              $scope.gotoCategoryAdd();
+              break;
+            case 1:
+
+              break;
+          }
+        },
+        titleText:'更多操作'
+      });
+    };
+    $scope.gotoCategoryAdd = function () {
+      location.href = '#/app/category-add/' + $scope.activeCategory.ID + '/' + $scope.activeCategory.Name;
+    }
+  }]);
+})();
