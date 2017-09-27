@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('starter.controllers').controller('CategoryListCtrl',['$scope',function ($scope) {
+  angular.module('starter.controllers').controller('CategoryListCtrl',['$scope','$ionicActionSheet','$ionicHistory',function ($scope,$ionicActionSheet,$ionicHistory) {
     $scope.categories =[
       {
         ID:1
