@@ -13,12 +13,13 @@
     $scope.$on('$stateChangeSuccess',function () {
       $scope.shop=localStorageService.get('Shop',{
         name:'刘智勇',
+        ab:'',
         name1:'刘智勇',
-        phone:'18650715138',
+        phone:'18650327647',
         phone1:'18650327647',
         createTime:'2017-9-28 15:30:00',
         email:'690284618@qq.com',
-        hylx:'111',
+        hylx:'111'
       });
     });
   }])
