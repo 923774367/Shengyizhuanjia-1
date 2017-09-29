@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('starter.controllers').controller('CategoryListCtrl',['$scope','$ionicActionSheet','$ionicHistory',function ($scope,$ionicActionSheet,$ionicHistory) {
+  angular.module('starter.controllers').controller('CategoryListCtrl',['$scope','$ionicActionSheet','$ionicHistory','CategoryService',function ($scope,$ionicActionSheet,$ionicHistory,CategoryService) {
     $scope.categories =[
       {
         ID:1
@@ -126,6 +126,9 @@
     };
     $scope.gotoCategoryAdd = function () {
       location.href = '#/app/category-add/' + $scope.activeCategory.ID + '/' + $scope.activeCategory.Name;
-    }
+    };
+      $scope.Swatch('activeSubCategory',function () {
+        CategoryService.updateCategory($scope.activeSubCategory);
+      })
   }]);
 })();
