@@ -114,6 +114,15 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
         }
       }
     })
+    .state('app.changepassword', {
+      url: '/changepassword',
+      views: {
+        'menuContent': {
+          templateUrl: 'views/changepassword/changepassword.html',
+          conroller:'ChangePasswordCtrl'
+        }
+      }
+    })
     .state('app.setting', {
       url: '/setting',
       views: {
