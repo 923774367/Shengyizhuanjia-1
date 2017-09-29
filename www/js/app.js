@@ -132,7 +132,15 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
         }
       }
     })
-
+    .state('app.product-add',{
+      url:'/product-add/:id/:name',
+      views:{
+        'menuContent':{
+          templateUrl: 'views/product/product-add.html',
+          controller: 'ProductAddCtrl'
+        }
+      }
+    })
     .state('app.playlists', {
       url: '/playlists',
       views: {
