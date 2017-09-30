@@ -119,7 +119,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
       views: {
         'menuContent': {
           templateUrl: 'views/changepassword/changepassword.html',
-          conroller:'ChangePasswordCtrl'
+          controller:'ChangePasswordCtrl'
         }
       }
     })
@@ -133,7 +133,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
       }
     })
     .state('app.product-add',{
-      url:'/product-add/:id/:name',
+      url:'/product-add',
       views:{
         'menuContent':{
           templateUrl: 'views/product/product-add.html',

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   angular.module('starter.controllers').controller('ProductAddCtrl',['$scope','CategoryService',function ($scope,CategoryService) {
-    $scope.product = {
+    $scope.product={
       ID:0,
       Name:'',
       CategoryID:CategoryService.activeCategory.ID,
@@ -12,9 +12,9 @@
     };
     $scope.$on('CategoryUpdate',function (event,data) {
       console.log(data);
-      $scope.product.categoryID = CategoryService.activeCategory.ID;
-      $scope.product.category.ID = CategoryService.activeCategory.ID;
-      $scope.product.category.Name = CategoryService.activeCategory.Name;
+      $scope.product.CategoryID=CategoryService.activeCategory.ID;
+      $scope.product.Category.ID=CategoryService.activeCategory.ID;
+      $scope.product.Category.Name=CategoryService.activeCategory.Name;
     });
   }]);
 })();

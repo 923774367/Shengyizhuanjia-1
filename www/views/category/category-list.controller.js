@@ -87,6 +87,8 @@
         ]
       }
     ];
+    $scope.activeCategory={};
+    $scope.activeSubCategory ={};
     if($scope.categories.length>0){
       $scope.activeCategory=$scope.categories[0];
     }
@@ -127,8 +129,10 @@
     $scope.gotoCategoryAdd = function () {
       location.href = '#/app/category-add/' + $scope.activeCategory.ID + '/' + $scope.activeCategory.Name;
     };
-      $scope.Swatch('activeSubCategory',function () {
-        CategoryService.updateCategory($scope.activeSubCategory);
+      $scope.$watch('activeSubCategory',function (newValue,oldValue) {
+        if(newValue.ID) {
+          CategoryService.updateCategory($scope.activeSubCategory);
+        }
       })
   }]);
 })();

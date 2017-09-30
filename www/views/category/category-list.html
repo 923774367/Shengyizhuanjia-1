@@ -16,7 +16,7 @@
     <ul class="list">
       <li class="item">小类别</li>
       <li class="item">无小分类进入大分类</li>
-      <li class="item" ng-repeat="subCategory in activeCategory.Children" ng-click="selectCategory(subCategory)">
+      <li class="item" ng-repeat="subCategory in activeCategory.Children" ng-click="selectSubCategory(subCategory)">
         {{subCategory.Name}}
       </li>
     </ul>
