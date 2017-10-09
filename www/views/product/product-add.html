@@ -8,9 +8,9 @@
       <div class="item item-input item-icon-right">
         <label style="display:flex;width: 100%;padding-top: 2px;padding-bottom: 2px;" for="">
           <span class="input-label">条码</span>
-          <input type="text" placeholder="输入商品条码">
+          <input type="text" placeholder="输入商品条码" ng-model="product.Barcode">
         </label>
-        <i class="icon ion-qr-scanner energized"></i>
+        <i class="icon ion-qr-scanner energized" ng-click="scanBarcode()"></i>
       </div>
       <label class="item item-input" for="">
         <span class="input-label">名称<span class="energized">*</span> </span>
