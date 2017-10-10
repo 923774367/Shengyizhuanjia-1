@@ -1,18 +1,28 @@
 (function () {
   'use strict';
-  angular.module('starter.controllers').controller('ProductAddCtrl',['$scope','CategoryService','$cordovaBarcodeScanner','$cordovaCamera','$cordovaImagePicker','$ionicActionSheet',
-    function ($scope,CategoryService,$cordovaBarcodeScanner,$cordovaCamera,$cordovaImagePicker,$ionicActionSheet) {
+  angular.module('starter.controllers').controller('ProductAddCtrl',['$scope','CategoryService','$cordovaBarcodeScanner','$cordovaCamera','$cordovaImagePicker','$ionicActionSheet','$ionicPopup',
+    function ($scope,CategoryService,$cordovaBarcodeScanner,$cordovaCamera,$cordovaImagePicker,$ionicActionSheet,$ionicPopup) {
     $scope.product={
       ID:0,
       Name:'',
       Barcode:'',
+      SupplierID:0,
       Images:['/views/product/img/1.jpg','/views/product/img/2.jpg','/views/product/img/3.jpg'],
       CategoryID:CategoryService.activeCategory.ID,
       Category:{
         ID:CategoryService.activeCategory.ID,
         Name:CategoryService.activeCategory.Name
+      },
+      Supplier: {
+        ID:0,
+        Name:''
       }
     };
+      $scope.supplier ={
+        ID:0,
+        Name:'',
+        Phone:''
+      };
     $scope.$on('CategoryUpdate',function (event,data) {
       console.log(data);
       $scope.product.CategoryID=CategoryService.activeCategory.ID;
