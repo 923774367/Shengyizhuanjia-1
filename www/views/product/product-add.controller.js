@@ -7,7 +7,7 @@
       Name:'',
       Barcode:'',
       SupplierID:0,
-      Images:['/views/product/img/1.jpg','/views/product/img/2.jpg','/views/product/img/3.jpg'],
+      Images:['/views/product/img/1.jpg','/views/product/img/2.jpg'],
       CategoryID:CategoryService.activeCategory.ID,
       Category:{
         ID:CategoryService.activeCategory.ID,
@@ -96,7 +96,7 @@
           title:'新增供货商',
           templateUrl:'/views/supplier/supplier-quick-add.html',
           scope:$scope,
-          button:[{
+          buttons:[{
             text:'取消',
             type:'button-outline button-energized'
           },{
