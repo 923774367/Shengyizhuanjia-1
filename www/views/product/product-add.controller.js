@@ -7,6 +7,8 @@
       Name:'',
       Barcode:'',
       SupplierID:0,
+      Price:'',
+      Stock:'',
       Images:['/views/product/img/1.jpg','/views/product/img/2.jpg'],
       CategoryID:CategoryService.activeCategory.ID,
       Category:{

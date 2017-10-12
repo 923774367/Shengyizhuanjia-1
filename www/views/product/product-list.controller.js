@@ -1,24 +1,43 @@
-/**
- * Created by Administrator on 2017/10/10.
- */
 (function () {
   'use strict';
   angular.module('starter.controllers')
     .controller('ProductListCtrl',['$scope','$ionicLoading','$timeout','$filter',function ($scope,$ionicLoading,$timeout,$filter) {
-      $scope.products = [];
-      $scope.sourceProducts = [];
-      $scope.searchMV = {
+      $scope.products=[];
+      $scope.sourceProducts=[];
+      $scope.searchMV={
         content:''
       };
+      var isLoading=false;
+      var pageIndex=1;
       $scope.$on('$ionicView.enter',function () {
         $ionicLoading.show({
-          template:'<ion-spinner icon="ios" class="spinner-light"></ion-spinner>数据加载中，请稍后......',
-          //duration:'2000'
+          template:'<ion-spinner icon="ios" class="spinner-light"></ion-spinner>数据加载中，请稍候......'
         });
-        //请求数据
+        $scope.doRefresh();
+      });
+      $scope.getByName=function () {
+        $scope.products=$filter('filter')($scope.sourceProducts,{
+          Name:$scope.searchMV.content
+        });
+      };
+      $scope.doRefresh=function () {
+        pageIndex=1;
+        $scope.hasMore=false;
+        $scope.products=[];
+        loadData();
+      };
+      $scope.loadMore=function () {
+        pageIndex++;
+        loadData();
+      };
+      function loadData() {
+        if(isLoading==true){
+          return;
+        }
+        isLoading=true;
         $timeout(function () {
-          $ionicLoading.hide();
-          $scope.products = [
+
+          var list=[
             {
               ID:1
               ,Images:['views/product/img/1.jpg']
@@ -45,7 +64,7 @@
             }
             ,{
               ID:1
-              ,Images:[]
+              ,Images:['views/product/img/commodity_no.png']
               ,Name:'lf'
               ,Price:'2'
               ,Store:9
@@ -53,7 +72,7 @@
             }
             ,{
               ID:1
-              ,Images:[]
+              ,Images:['views/product/img/commodity_no.png']
               ,Name:'iphone8'
               ,Price:'5388.599'
               ,Store:8
@@ -61,21 +80,18 @@
             }
             ,{
               ID:1
-              ,Images:[]
+              ,Images:['views/product/img/commodity_no.png']
               ,Name:'iphone6s'
               ,Price:'5388.599'
               ,Store:7
               ,Barcode:'12121212117'
             }
           ];
-          $scope.sourceProducts = angular.copy($scope.products)
+          $scope.products=list;
+          isLoading=false;
+          $scope.$broadcast('scroll.refreshComplete');
+          $ionicLoading.hide();
         },2000);
-      });
-
-      $scope.getByName = function () {
-        $scope.products = $filter('filter')($scope.sourceProducts, {
-          Name:$scope.searchMV.content
-        });
-      };
+      }
     }]);
 })();
