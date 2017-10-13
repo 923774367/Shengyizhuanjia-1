@@ -64,7 +64,7 @@
             }
             ,{
               ID:1
-              ,Images:['views/product/img/commodity_no.png']
+              ,Images:[]
               ,Name:'lf'
               ,Price:'2'
               ,Store:9
@@ -72,7 +72,7 @@
             }
             ,{
               ID:1
-              ,Images:['views/product/img/commodity_no.png']
+              ,Images:[]
               ,Name:'iphone8'
               ,Price:'5388.599'
               ,Store:8
@@ -80,7 +80,7 @@
             }
             ,{
               ID:1
-              ,Images:['views/product/img/commodity_no.png']
+              ,Images:[]
               ,Name:'iphone6s'
               ,Price:'5388.599'
               ,Store:7

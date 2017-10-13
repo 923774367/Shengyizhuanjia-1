@@ -5,6 +5,9 @@
       oldPassword:'',
       password:'',
       confirmPassword:''
-    }
+    };
+    $scope.save = function () {
+
+    };
   }]);
 })();
