@@ -6,12 +6,19 @@
       password:'',
       confirmPassword:''
     };
-    $scope.save = function () {
-      console.log($scope.changePasswordForm.$valid);
-      if($scope.changePasswordForm.$valid){
-        console.log('save');
-        popupService.toast('dsflsdflsfldl');
+    $scope.save = function (valid) {
+      if($scope.changePasswordForm.oldPassword.$error.required){
+        popupService.toast('jiumimabitian');
+        return;
       }
+
+        console.log($scope.changePasswordForm.$valid);
+        if($scope.changePasswordForm.$valid){
+          console.log('save');
+          popupService.toast('dsflsdflsfldl');
+        }
+
+
     };
   }]);
 })();
